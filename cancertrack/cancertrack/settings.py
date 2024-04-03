@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'patients',
+    'test_results',
+    'diagnoses',
+    'treatments',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +59,10 @@ ROOT_URLCONF = 'cancertrack.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            # Add the main templates directory for your project
+            os.path.join(BASE_DIR, 'templates'),  # Assuming BASE_DIR is already defined
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
