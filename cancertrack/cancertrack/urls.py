@@ -14,9 +14,19 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+# Imports the admin module, which provides the Django admin interface.
 from django.contrib import admin
-from django.urls import path
+#  Imports the path function and include function from Django's URL patterns module.
+from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), 
+    # Defines a URL pattern for the patients app. When a URL starting with patients/ is requested, 
+    # Django will include the URL patterns defined in the patients.urls module.
+
+    path('patients/', include('patients.urls')),
+    path('test-results/', include('test_results.urls')),
+    path('diagnoses/', include('diagnoses.urls')),
+    path('treatments/', include('treatments.urls')),
+    
 ]

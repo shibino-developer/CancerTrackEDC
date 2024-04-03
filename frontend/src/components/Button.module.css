@@ -1,0 +1,20 @@
+/* src/components/Button.module.css */
+/* a CSS module file (Button.module.css)  */
+/* that defines styles for the button component. */
+.button {          /*This is a class selector targeting elements with the class name button,
+  defines the styling,
+  styles specified within this block will be applied to any element with the button class*/
+    padding: 10px 20px; /*This sets the padding of the button, 10px refers to the top and bottom padding,
+    20px refers to the left and right padding.*/
+    border: none; /* no visible border*/
+    border-radius: 4px; /*4px gives slight curvarture at corners i.e. making it rounded corners.*/
+    background-color: #007bff; /* bg of button to blue*/
+    color: #fff; /*text-color to white*/
+    cursor: pointer; /*while hovering, it clickable*/
+  }
+  
+  .button:hover { /*a pseudo-class selector that targets the button when it's hovered over by the mouse.
+    It specifies the styles to be applied to the button when hovered.*/
+    background-color: #0056b3;
+  }
+  
