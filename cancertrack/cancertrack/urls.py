@@ -18,9 +18,11 @@ Including another URLconf
 from django.contrib import admin
 #  Imports the path function and include function from Django's URL patterns module.
 from django.urls import path, include
+from oauth2_provider.views import TokenView
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
+    
     # Defines a URL pattern for the patients app. When a URL starting with patients/ is requested, 
     # Django will include the URL patterns defined in the patients.urls module.
 
