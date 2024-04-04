@@ -23,18 +23,18 @@ class PatientViewSet(viewsets.ModelViewSet):
 # Here, PatientSerializer is used, which we defined earlier to serialize Patient objects.
     serializer_class = PatientSerializer
      # Define an action to handle the OAuth authorization redirect
-    @action(detail=False, methods=['GET'], url_path='authorize')
-    def authorize(self, request):
-        # Redirect to the OAuth authorization URL
-        # Replace 'authorization_url' with your actual OAuth authorization URL
-        authorization_url = 'https://accounts.google.com/o/oauth2/auth'  # Replace with your actual OAuth authorization URL
-        return redirect(authorization_url)
+    # @action(detail=False, methods=['GET'], url_path='authorize')
+    # def authorize(self, request):
+    #     # Redirect to the OAuth authorization URL
+    #     # Replace 'authorization_url' with your actual OAuth authorization URL
+    #     authorization_url = 'https://accounts.google.com/o/oauth2/auth'  # Replace with your actual OAuth authorization URL
+    #     return redirect(authorization_url)
 
-    # Define an action to handle the OAuth callback
-    @action(detail=False, methods=['GET'], url_path='oauth2callback')
-    def oauth2callback(self, request):
-        # Handle the OAuth callback logic here
-        # This is where you exchange the authorization code for an access token
-        # and then use the access token to authenticate the user
-        # Once authenticated, you can redirect the user to the desired endpoint
-        return Response({'message': 'OAuth callback handled successfully'})
+    # # Define an action to handle the OAuth callback
+    # @action(detail=False, methods=['GET'], url_path='oauth2callback')
+    # def oauth2callback(self, request):
+    #     # Handle the OAuth callback logic here
+    #     # This is where you exchange the authorization code for an access token
+    #     # and then use the access token to authenticate the user
+    #     # Once authenticated, you can redirect the user to the desired endpoint
+    #     return Response({'message': 'OAuth callback handled successfully'})
