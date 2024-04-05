@@ -8,5 +8,5 @@ class TestResult(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
     test_type = models.CharField(max_length=100)
     result = models.CharField(max_length=100)
-    date = models.DateField()
+    date = models.DateField(default='1900-01-01')
     # Add more fields as needed
